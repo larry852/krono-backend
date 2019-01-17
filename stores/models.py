@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class Company(models.Model):
+class Store(models.Model):
     users = models.ManyToManyField(User)
     city = models.ForeignKey('cities.City', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
