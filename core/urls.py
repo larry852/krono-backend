@@ -3,11 +3,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
-from users.urls import router as users_router
 from rest_framework.documentation import include_docs_urls
+from users.urls import router as users_router
+from cities.urls import router as cities_router
 
 router = routers.DefaultRouter()
 router.registry.extend(users_router.registry)
+router.registry.extend(cities_router.registry)
 
 urlpatterns = [
     path('', admin.site.urls),
