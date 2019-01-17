@@ -25,12 +25,10 @@ pip install -r requirements.txt
 ```
 
 
-## API Endpoints
-
-### General
-| Endpoint | Parameters | Method | Response | Description | Token |
+## API general endpoints
+| Endpoint | Parameters | Method | Description | Token |
 | --- | --- | --- | --- | --- | --- | 
-| / |  | GET |  | Admin Django - WEB | <ul><li>[ ] </li></ul> |
-| /api/v1/ |  | GET | <ul><li>CRUDs</li></ul> | API root | <ul><li>[ ] </li></ul> |
-| /api/v1/docs/ |  | GET | <ul><li>CRUDs</li></ul> | API documentation | <ul><li>[ ] </li></ul> |
-| /api/v1/docs/schema.js |  | GET | <ul><li>CRUDs</li></ul> | API schema | <ul><li>[ ] </li></ul> |
+| / |  | GET | Admin Django - WEB | <ul><li>[ ] </li></ul> |
+| /api/v1/ |  | GET | API root | <ul><li>[ ] </li></ul> |
+| /api/v1/docs/ |  | GET | API documentation | <ul><li>[ ] </li></ul> |
+| /api/v1/docs/schema.js |  | GET | API schema | <ul><li>[ ] </li></ul> |
