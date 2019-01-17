@@ -5,6 +5,6 @@ from core.utils.file import get_path_class
 
 
 class CustomUser(AbstractUser):
-    birthdate = models.DateField()
+    birthdate = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default='')
     avatar = models.ImageField(upload_to=get_path_class, default='default-profile.png')
