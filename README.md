@@ -23,3 +23,14 @@ pip install -r requirements.txt
 # Run API on http://localhost:8000/
 ./manage.py runserver
 ```
+
+
+## API Endpoints
+
+### General
+| Endpoint | Parameters | Method | Response | Description | Token |
+| --- | --- | --- | --- | --- | --- | 
+| / |  | GET |  | Admin Django - WEB | <ul><li>[ ] </li></ul> |
+| /api/v1/ |  | GET | <ul><li>CRUDs</li></ul> | API root | <ul><li>[ ] </li></ul> |
+| /api/v1/docs/ |  | GET | <ul><li>CRUDs</li></ul> | API documentation | <ul><li>[ ] </li></ul> |
+| /api/v1/docs/schema.js |  | GET | <ul><li>CRUDs</li></ul> | API schema | <ul><li>[ ] </li></ul> |
