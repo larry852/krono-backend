@@ -26,9 +26,9 @@ pip install -r requirements.txt
 
 
 ## API general endpoints
-| Endpoint | Parameters | Method | Description | Token |
-| --- | --- | --- | --- | --- | 
-| / |  | GET | Admin Django - WEB | <ul><li>[ ] </li></ul> |
-| /api/v1/ |  | GET | API root | <ul><li>[ ] </li></ul> |
-| /api/v1/docs/ |  | GET | API documentation | <ul><li>[ ] </li></ul> |
-| /api/v1/docs/schema.js |  | GET | API schema | <ul><li>[ ] </li></ul> |
+| Endpoint | Method | Description | Token |
+| --- | --- | --- | --- | 
+| / | GET | Admin Django - WEB | <ul><li>[ ] </li></ul> |
+| /api/v1/ | GET | API root | <ul><li>[ ] </li></ul> |
+| /api/v1/docs/ | GET | API documentation | <ul><li>[ ] </li></ul> |
+| /api/v1/docs/schema.js | GET | API schema | <ul><li>[ ] </li></ul> |
