@@ -4,5 +4,5 @@ from .models import Store
 
 
 class StoreViewSet(viewsets.ModelViewSet):
-    queryset = Store.objects.all()
+    queryset = Store.objects.filter(is_active=True)
     serializer_class = StoreSerializer

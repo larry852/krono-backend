@@ -6,10 +6,12 @@ from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
 from users.urls import router as users_router
 from cities.urls import router as cities_router
+from stores.urls import router as stores_router
 
 router = routers.DefaultRouter()
 router.registry.extend(users_router.registry)
 router.registry.extend(cities_router.registry)
+router.registry.extend(stores_router.registry)
 
 urlpatterns = [
     path('', admin.site.urls),
