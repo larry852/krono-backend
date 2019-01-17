@@ -126,3 +126,8 @@ STATIC_URL = '/static/'
 
 # Custom model user
 AUTH_USER_MODEL = 'users.CustomUser'
+
+
+# Setup media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
