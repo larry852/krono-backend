@@ -1,3 +1,13 @@
 from django.db import models
+from core.utils.file import get_path_class
+from django.contrib.auth import get_user_model
 
-# Create your models here.
+User = get_user_model()
+
+
+class Company(models.Model):
+    users = models.ManyToManyField(User)
+    city = models.ForeignKey('cities.City', on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    logo = models.ImageField(upload_to=get_path_class, default='default-store.png')
+    is_active = models.BooleanField(default=True)
