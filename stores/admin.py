@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Store
 
-# Register your models here.
+
+@admin.register(Store)
+class AdminOrganization(admin.ModelAdmin):
+    list_display = ('id', 'city', 'name', 'logo', 'is_active')
