@@ -22,6 +22,7 @@ virtualenv -p python3 env
 source env/bin/activate
 pip install -r requirements.txt
 
+./manage.py migrate
 ./manage.py createsuperuser --email admin@admin.com --username admin
 # Default run on http://localhost:8000/
 ./manage.py runserver
