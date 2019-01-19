@@ -13,13 +13,6 @@ class StoreSerializer(serializers.ModelSerializer):
         }
 
 
-class DetailStoreSerializer(serializers.ModelSerializer):
+class DetailStoreSerializer(StoreSerializer):
     users = UserSerializer(read_only=True, many=True)
     city = CitySerializer()
-
-    class Meta:
-        model = Store
-        fields = ('__all__')
-        extra_kwargs = {
-            'is_active': {'read_only': True},
-        }
