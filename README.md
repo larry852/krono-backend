@@ -36,3 +36,12 @@ pip install -r requirements.txt
 | /api/v1/ | GET | API root | <ul><li>[ ] </li></ul> |
 | /api/v1/docs/ | GET | API documentation | <ul><li>[ ] </li></ul> |
 | /api/v1/docs/schema.js | GET | API schema | <ul><li>[ ] </li></ul> |
+
+
+## Load fake data
+```sh
+./manage.py seedCities --number=30
+./manage.py seedUsers --number=30
+./manage.py seedStores --number=30
+```
+*[Fix locale](https://github.com/Brobin/django-seed/pull/49/files)*
