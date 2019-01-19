@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,10 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # Setup media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Init
+REST_FRAMEWORK = {}
+
+# Filter and order
+REST_FRAMEWORK['DEFAULT_FILTER_BACKENDS'] = ('django_filters.rest_framework.DjangoFilterBackend', 'rest_framework.filters.OrderingFilter', 'rest_framework.filters.SearchFilter',)
