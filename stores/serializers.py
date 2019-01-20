@@ -2,6 +2,9 @@ from rest_framework import serializers
 from .models import Store
 from users.serializers import UserSerializer
 from cities.serializers import CitySerializer
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class StoreSerializer(serializers.ModelSerializer):
@@ -16,3 +19,11 @@ class StoreSerializer(serializers.ModelSerializer):
 class DetailStoreSerializer(StoreSerializer):
     users = UserSerializer(read_only=True, many=True)
     city = CitySerializer()
+
+
+class UsersFormSerializer(serializers.Serializer):
+    users = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=True, help_text='Users related Store')
+
+    class Meta:
+        model = Store
+        fields = ('users',)
