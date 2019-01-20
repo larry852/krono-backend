@@ -31,17 +31,18 @@ class StoreViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['patch'])
     def associate(self, request, pk=None):
         store = self.get_object()
-        users_form_serializer = UsersFormSerializer(data=request.data)
-        users_form_serializer.is_valid(raise_exception=True)
-        new_users = users_form_serializer.validated_data.get('users')
-        store.users.add(*new_users)
+        users = self.get_validated_users(request.data)
+        store.users.add(*users)
         return self.users(request, pk=None)
 
     @action(detail=True, methods=['patch'])
     def disassociate(self, request, pk=None):
         store = self.get_object()
-        users_form_serializer = UsersFormSerializer(data=request.data)
-        users_form_serializer.is_valid(raise_exception=True)
-        old_users = users_form_serializer.validated_data.get('users')
-        store.users.remove(*old_users)
+        users = self.get_validated_users(request.data)
+        store.users.remove(*users)
         return self.users(request, pk=None)
+
+    def get_validated_users(self, data):
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        return serializer.validated_data.get('users')
